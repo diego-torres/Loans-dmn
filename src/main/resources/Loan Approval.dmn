@@ -28,7 +28,7 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_BB959CF4-2AA1-40CA-B473-5E0C8C50B831" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_CF9D8874-AEA9-4A45-9CFB-A7CB4AB6FD46">
-        <dmn:inputExpression id="_DE0C1B69-5510-4195-9E5D-3FB02D8010AD" typeRef="string">
+        <dmn:inputExpression id="_DE0C1B69-5510-4195-9E5D-3FB02D8010AD">
           <dmn:text>Credit Score</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
@@ -76,15 +76,6 @@
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape id="dmnshape-_3DE9E6B4-D29C-416B-AF4E-9BD996980E71" dmnElementRef="_3DE9E6B4-D29C-416B-AF4E-9BD996980E71" isCollapsed="false">
-        <dmndi:DMNStyle>
-          <dmndi:FillColor red="255" green="255" blue="255"/>
-          <dmndi:StrokeColor red="0" green="0" blue="0"/>
-          <dmndi:FontColor red="0" green="0" blue="0"/>
-        </dmndi:DMNStyle>
-        <dc:Bounds x="271" y="263" width="100" height="50"/>
-        <dmndi:DMNLabel/>
-      </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_9530B1F9-1058-4627-A059-8C30767E828A" dmnElementRef="_9530B1F9-1058-4627-A059-8C30767E828A" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
@@ -92,6 +83,15 @@
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
         <dc:Bounds x="346" y="132" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-_3DE9E6B4-D29C-416B-AF4E-9BD996980E71" dmnElementRef="_3DE9E6B4-D29C-416B-AF4E-9BD996980E71" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="271" y="263" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-_7C887745-2FF7-4181-B1FC-E9CB350CF46E" dmnElementRef="_7C887745-2FF7-4181-B1FC-E9CB350CF46E" isCollapsed="false">
