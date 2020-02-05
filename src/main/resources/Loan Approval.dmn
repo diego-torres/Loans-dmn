@@ -1,9 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_D89BFD0C-114B-4BFA-A986-134CD385F2CD" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_0A6FA915-BA2D-4E61-BC01-2144437CD3D3" name="Loan Approval" expressionLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_D89BFD0C-114B-4BFA-A986-134CD385F2CD">
   <dmn:extensionElements/>
+  <dmn:itemDefinition id="_E32A5408-0FE6-4957-8C63-DD6D27D6E2DB" name="Loan Approved" isCollection="true">
+    <dmn:typeRef>string</dmn:typeRef>
+  </dmn:itemDefinition>
   <dmn:decision id="_9530B1F9-1058-4627-A059-8C30767E828A" name="Loan Approval">
     <dmn:extensionElements/>
-    <dmn:variable id="_8C19D2C4-9923-4761-AFFC-AD290B0B452C" name="Loan Approval"/>
+    <dmn:variable id="_8C19D2C4-9923-4761-AFFC-AD290B0B452C" name="Loan Approval" typeRef="string"/>
     <dmn:informationRequirement id="_B38F5E4E-0127-42DD-B110-4821C46CEDF6">
       <dmn:requiredInput href="#_3DE9E6B4-D29C-416B-AF4E-9BD996980E71"/>
     </dmn:informationRequirement>
@@ -21,7 +24,11 @@
           <dmn:text>DTI</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_56E3FA59-FA16-42E5-A2F0-D01A47B3A301"/>
+      <dmn:output id="_56E3FA59-FA16-42E5-A2F0-D01A47B3A301" typeRef="string">
+        <dmn:outputValues id="_5E525B3C-3594-45A6-94EC-5E8F3BA64928">
+          <dmn:text>"Approved", "Declined"</dmn:text>
+        </dmn:outputValues>
+      </dmn:output>
       <dmn:rule id="_538A25A4-378B-4D48-89B7-0A30E92D1397">
         <dmn:inputEntry id="_1F41177B-2D8A-4F0F-B9D2-68EBF6AB2A42">
           <dmn:text></dmn:text>
