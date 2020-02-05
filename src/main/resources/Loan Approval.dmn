@@ -19,7 +19,7 @@
   <dmn:decision id="_9530B1F9-1058-4627-A059-8C30767E828A" name="Loan Approval">
     <dmn:extensionElements/>
     <dmn:allowedAnswers>Approved or Denied</dmn:allowedAnswers>
-    <dmn:variable id="_8C19D2C4-9923-4761-AFFC-AD290B0B452C" name="Loan Approval" typeRef="Loan Approved"/>
+    <dmn:variable id="_8C19D2C4-9923-4761-AFFC-AD290B0B452C" name="Loan Approval" typeRef="string"/>
     <dmn:informationRequirement id="_B38F5E4E-0127-42DD-B110-4821C46CEDF6">
       <dmn:requiredInput href="#_3DE9E6B4-D29C-416B-AF4E-9BD996980E71"/>
     </dmn:informationRequirement>
@@ -28,7 +28,7 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_BB959CF4-2AA1-40CA-B473-5E0C8C50B831" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_CF9D8874-AEA9-4A45-9CFB-A7CB4AB6FD46">
-        <dmn:inputExpression id="_DE0C1B69-5510-4195-9E5D-3FB02D8010AD">
+        <dmn:inputExpression id="_DE0C1B69-5510-4195-9E5D-3FB02D8010AD" typeRef="string">
           <dmn:text>Credit Score</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
