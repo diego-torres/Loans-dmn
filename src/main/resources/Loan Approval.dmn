@@ -19,7 +19,7 @@
   <dmn:decision id="_9530B1F9-1058-4627-A059-8C30767E828A" name="Loan Approval">
     <dmn:extensionElements/>
     <dmn:allowedAnswers>Approved or Denied</dmn:allowedAnswers>
-    <dmn:variable id="_8C19D2C4-9923-4761-AFFC-AD290B0B452C" name="Loan Approval" typeRef="string"/>
+    <dmn:variable id="_8C19D2C4-9923-4761-AFFC-AD290B0B452C" name="Loan Approval" typeRef="Loan Approved"/>
     <dmn:informationRequirement id="_B38F5E4E-0127-42DD-B110-4821C46CEDF6">
       <dmn:requiredInput href="#_3DE9E6B4-D29C-416B-AF4E-9BD996980E71"/>
     </dmn:informationRequirement>
@@ -28,29 +28,73 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_BB959CF4-2AA1-40CA-B473-5E0C8C50B831" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_CF9D8874-AEA9-4A45-9CFB-A7CB4AB6FD46">
-        <dmn:inputExpression id="_DE0C1B69-5510-4195-9E5D-3FB02D8010AD">
+        <dmn:inputExpression id="_DE0C1B69-5510-4195-9E5D-3FB02D8010AD" typeRef="Credit Score">
           <dmn:text>Credit Score</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:input id="_08CBC8FA-45F3-4515-BA21-CFA2BFD583D5">
-        <dmn:inputExpression id="_D7166DDB-7D99-4A16-84DA-AEB93E46B27B">
+        <dmn:inputExpression id="_D7166DDB-7D99-4A16-84DA-AEB93E46B27B" typeRef="DTI">
           <dmn:text>DTI</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_56E3FA59-FA16-42E5-A2F0-D01A47B3A301" typeRef="string">
+      <dmn:output id="_56E3FA59-FA16-42E5-A2F0-D01A47B3A301" typeRef="Loan Approved">
         <dmn:outputValues id="_5E525B3C-3594-45A6-94EC-5E8F3BA64928">
           <dmn:text>"Approved", "Declined"</dmn:text>
         </dmn:outputValues>
       </dmn:output>
       <dmn:rule id="_538A25A4-378B-4D48-89B7-0A30E92D1397">
         <dmn:inputEntry id="_1F41177B-2D8A-4F0F-B9D2-68EBF6AB2A42">
-          <dmn:text></dmn:text>
+          <dmn:text>&lt;600</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_7B1F1039-B9DE-4C48-9BF8-0F5677224DF0">
-          <dmn:text></dmn:text>
+          <dmn:text>-</dmn:text>
         </dmn:inputEntry>
         <dmn:outputEntry id="_7E2E5E04-6C6F-4AFC-B3F7-2F81AA5E47E3">
-          <dmn:text></dmn:text>
+          <dmn:text>Declined</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_74632139-7035-485F-AF16-A378004A31C4">
+        <dmn:inputEntry id="_EBA2F271-EC51-401B-9D77-C4637BF822CD">
+          <dmn:text>[600..660]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_3B17ED97-C078-428A-BB51-94A167865235">
+          <dmn:text>&gt;=0.35</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_F3B39420-A6B0-4A9E-9EF8-F15909920501">
+          <dmn:text>Declined</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_F99E17C6-4BC3-4C7F-96A7-DA4FB46BDFB9">
+        <dmn:inputEntry id="_E0205E54-B8E2-4424-A89E-B17807B860BA">
+          <dmn:text>&gt;660</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_19B66044-596B-43B9-BAF1-37CFFE10DB63">
+          <dmn:text>&gt;=0.38</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_11B04CBD-296D-4A48-94D5-EC208365FEEF">
+          <dmn:text>Declined</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_02014268-0B44-4C94-B352-FED0EB7E6055">
+        <dmn:inputEntry id="_6B91A6E3-F774-418F-B96E-76B85B32BB31">
+          <dmn:text>[600..660]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_934B5DDD-163C-4E6C-8A3E-CDFEF543C656">
+          <dmn:text>&lt;0.35</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_DB5D811A-AB21-4BAE-A836-65BD257D7DBE">
+          <dmn:text>Approved</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="_64249B22-EC7B-4F2B-8287-B4D27916CBE3">
+        <dmn:inputEntry id="_E1BF97FB-350D-44B1-BD81-AE77FD178C25">
+          <dmn:text>&gt;660</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_8F06EAAB-F7A3-4FD0-BE52-376E3E9A3366">
+          <dmn:text>&lt;0.38</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2FDE632D-B9B9-468E-98C5-1B50ED2DF238">
+          <dmn:text>Approved</dmn:text>
         </dmn:outputEntry>
       </dmn:rule>
     </dmn:decisionTable>
